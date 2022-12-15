@@ -1,6 +1,8 @@
 # install-ocs-inventory-server-on-debian
 Install OCS Inventory Server on Debian
 
+https://wiki.projetoroot.com.br/index.php/Ocs_Inventory_2.9
+
 https://computingforgeeks.com/how-to-install-ocs-inventory-server-on-debian-linux/
 
 
@@ -22,12 +24,11 @@ sudo apt -y install mariadb-server mariadb-client git make cmake gcc build-essen
 
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip
 
-
 mysql -u root -p
 
-CREATE DATABASE ocsweb;
+CREATE DATABASE ocs;
 
-GRANT ALL PRIVILEGES ON ocsweb.* TO ocs@localhost IDENTIFIED BY "StrongDBPassword";
+GRANT ALL PRIVILEGES ON ocs.* TO ocs@localhost IDENTIFIED BY "StrongDBPassword";
 
 FLUSH PRIVILEGES;
 
