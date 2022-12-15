@@ -6,9 +6,6 @@ https://wiki.projetoroot.com.br/index.php/Ocs_Inventory_2.9
 https://computingforgeeks.com/how-to-install-ocs-inventory-server-on-debian-linux/
 
 
-https://computingforgeeks.com/how-to-install-ocs-inventory-server-on-debian-linux/
-
-
 https://www.gnulinuxbrasil.com.br/?p=3402
 
 
