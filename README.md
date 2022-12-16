@@ -12,12 +12,6 @@ sudo apt update && sudo apt -y full-upgrade
 sudo apt -y install mariadb-server mariadb-client git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php-xmlrpc software-properties-common ca-certificates lsb-release apt-transport-https
 
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip
-
-sudo perl -MCPAN -e 'install Mojolicious'
-
-sudo perl -MCPAN -e 'install Switch'
-
-sudo perl -MCPAN -e 'install Plack::Handler'
 ```
 
 ## mysql_secure_installation
