@@ -71,8 +71,6 @@ a2enconf zz-ocsinventory-restapi.conf
 
 ## Ajustando dono da pasta reports
 ```sh
-sudo rm /usr/share/ocsinventory-reports/ocsreports/install.php
-
 chown -R www-data:www-data /var/lib/ocsinventory-reports/
 
 systemctl restart apache2
