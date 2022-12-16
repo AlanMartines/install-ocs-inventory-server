@@ -58,8 +58,6 @@ tar xvf OCSNG_UNIX_SERVER-2.11.1.tar.gz
 cd OCSNG_UNIX_SERVER-2.11.1
 
 sudo ./setup.sh
-
-sudo rm /usr/share/ocsinventory-reports/ocsreports/install.php
 ```
 
 ## Criando Links Simbólicos para o Apache
@@ -73,6 +71,8 @@ a2enconf zz-ocsinventory-restapi.conf
 
 ## Ajustando dono da pasta reports
 ```sh
+sudo rm /usr/share/ocsinventory-reports/ocsreports/install.php
+
 chown -R www-data:www-data /var/lib/ocsinventory-reports/
 
 systemctl restart apache2
