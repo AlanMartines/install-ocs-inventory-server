@@ -80,7 +80,7 @@ vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
 OCS_DB_NAME ==>  database_name  line +/- 26 
 OCS_DB_LOCAL ==> database_name	line +/- 27
 OCS_DB_USER ==>  database_user	line +/- 29
-OCS_DB_PWD ==>   database_pwd		line +/- 31
+OCS_DB_PWD ==>   database_pwd   line +/- 31
 ```
 
 ## Ajustando dono da pasta reports
