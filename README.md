@@ -29,6 +29,8 @@ FLUSH PRIVILEGES;
 
 QUIT;
 ```
+![image](https://user-images.githubusercontent.com/10979090/208531417-a62e7a78-8426-4b8d-bda1-4fddd92034d7.png)
+
 
 ## Ajustes no php.ini
 ```sh
