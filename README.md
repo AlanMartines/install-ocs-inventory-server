@@ -70,7 +70,7 @@ vim vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
 # Parâmetros a serem alterados
 OCS_DB_LOCAL ==> database_name	line +/- 9
 OCS_DB_USER ==>  database_user	line +/- 10
-OCS_DB_PWD ==>   database_pwd		line +/- 11
+OCS_DB_PWD ==>   database_pwd   line +/- 11
 
 
 
