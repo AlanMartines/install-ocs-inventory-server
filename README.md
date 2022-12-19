@@ -8,8 +8,7 @@ https://pmorenoit.blog/2022/06/05/instalacion-de-ocs-inventory-server-2-9-2-en-u
 ```sh
 apt install sudo -y
 
-sudo apt update && sudo apt -y full-upgrade
-sudo apt -y install mariadb-server mariadb-client git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php-xmlrpc software-properties-common ca-certificates lsb-release apt-transport-https
+sudo apt -y install mariadb-server mariadb-client git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 php7.4-intl php-bcmath php-fpm php-pear php7.4-fpm php-cli php-xmlrpc software-properties-common ca-certificates lsb-release apt-transport-https curl
 
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip
 ```
@@ -61,6 +60,25 @@ a2enconf ocsinventory-reports.conf
 a2enconf z-ocsinventory-server.conf
 
 a2enconf zz-ocsinventory-restapi.conf
+```
+## Ajustes no OCS
+```sh
+vim vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
+
+# Parâmetros a serem alterados
+OCS_DB_LOCAL ==> database_name	line +/- 9
+OCS_DB_USER ==>  database_user	line +/- 10
+OCS_DB_PWD ==>   database_pwd		line +/- 11
+
+
+
+vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
+
+# Parâmetros a serem alterados
+OCS_DB_NAME ==>  database_name  line +/- 26 
+OCS_DB_LOCAL ==> database_name	line +/- 27
+OCS_DB_USER ==>  database_user	line +/- 29
+OCS_DB_PWD ==>   database_pwd		line +/- 31
 ```
 
 ## Ajustando dono da pasta reports
