@@ -74,7 +74,7 @@ OCS_DB_PWD ==>   database_pwd   line +/- 11
 
 
 
-vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
+vim /etc/apache2/conf-enabled/z-ocsinventory-server.conf
 
 # Parâmetros a serem alterados
 OCS_DB_NAME ==>  database_name  line +/- 26 
