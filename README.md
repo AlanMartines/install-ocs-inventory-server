@@ -1,4 +1,4 @@
-#Install OCS Inventory Server on Debian/Ubuntu
+# Install OCS Inventory Server on Debian/Ubuntu
 
 https://nksistemas.com/instalar-ocs-inventory-en-debian-10/
 
