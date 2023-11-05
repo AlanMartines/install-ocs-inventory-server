@@ -8,7 +8,23 @@ https://pmorenoit.blog/2022/06/05/instalacion-de-ocs-inventory-server-2-9-2-en-u
 ```sh
 apt install sudo -y
 
-sudo apt -y install mariadb-server mariadb-client git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 php7.4-intl php-bcmath php-fpm php-pear php7.4-fpm php-cli php-xmlrpc software-properties-common ca-certificates lsb-release apt-transport-https curl
+sudo apt -y install software-properties-common
+
+apt install sudo vim -y
+
+sudo apt update && sudo apt -y full-upgrade
+
+sudo add-apt-repository ppa:ondrej/php
+
+curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x
+
+sudo apt update 
+
+sudo apt -y install vim git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4 php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 php7.4-intl php-bcmath php-fpm php-pear php7.4-fpm php-cli php-xmlrpc php7.4-common php7.4-mysql php7.4-xmlrpc php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php7.4-imagick php-ssh2 graphicsmagick gcc libgraphicsmagick1-dev php-pear software-properties-common ca-certificates lsb-release apt-transport-https curl
+
+
+sudo apt install -y php8.2 libapache2-mod-php8.2 php8.2-mysql php8.2-common php8.2-curl php8.2-xml php8.2-mbstring php8.2-gettext php8.2-pdo php8.2-gd php8.2-zip php8.2-soap php8.2-xmlrpc php8.2-intl php8.2-mysqlnd php8.2-cli php8.2-dev php8.2-zip libapache2-mod-php8.2 php8.2-curl php8.2-bz2 php-pear
+
 
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip
 ```
