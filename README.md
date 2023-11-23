@@ -4,6 +4,8 @@ https://nksistemas.com/instalar-ocs-inventory-en-debian-10/
 
 https://pmorenoit.blog/2022/06/05/instalacion-de-ocs-inventory-server-2-9-2-en-ubuntu-22-04/
 
+https://tecadmin.net/switch-between-multiple-php-version-on-debian/
+
 ## Instalando Dependencias Necessárias
 
 ### Ubuntu
