@@ -5,21 +5,27 @@ https://nksistemas.com/instalar-ocs-inventory-en-debian-10/
 https://pmorenoit.blog/2022/06/05/instalacion-de-ocs-inventory-server-2-9-2-en-ubuntu-22-04/
 
 ## Instalando Dependencias Necessárias
+
+### Ubuntu
 ```sh
 apt install sudo -y
-
 sudo apt -y install software-properties-common
-
 apt install sudo vim -y
-
 sudo apt update && sudo apt -y full-upgrade
-
 sudo add-apt-repository ppa:ondrej/php
-
 curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x
-
 sudo apt update 
+```
+### Debian
+```sh
+sudo apt update
+sudo apt -y install lsb-release apt-transport-https ca-certificates 
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt update
+```
 
+```sh
 sudo apt -y install vim git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4 php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 php7.4-intl php-bcmath php-fpm php-pear php7.4-fpm php-cli php-xmlrpc php7.4-common php7.4-mysql php7.4-xmlrpc php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php7.4-imagick php-ssh2 graphicsmagick gcc libgraphicsmagick1-dev php-pear software-properties-common ca-certificates lsb-release apt-transport-https curl
 
 
