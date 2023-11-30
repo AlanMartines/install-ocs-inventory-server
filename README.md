@@ -38,6 +38,9 @@ sudo apt install -y php8.2 libapache2-mod-php8.2 php8.2-mysql php8.2-common php8
 
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip
 ```
+# Instalar MySQL
+
+https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
 
 ## mysql_secure_installation
 
