@@ -8,6 +8,8 @@ https://www.cyberciti.biz/faq/linux-apache2-change-default-port-ipbinding/
 
 https://tecadmin.net/switch-between-multiple-php-version-on-debian/
 
+https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
+
 ## Instalando Dependencias Necessárias
 
 ### Ubuntu
@@ -20,6 +22,7 @@ sudo add-apt-repository ppa:ondrej/php
 curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x
 sudo apt update 
 ```
+
 ### Debian
 ```sh
 sudo apt update
@@ -32,15 +35,19 @@ sudo apt update
 ```sh
 sudo apt -y install vim git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4 php7.4-pgsql php7.4-cli php7.4-common libapache2-mod-php7.4 php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 php7.4-intl php-bcmath php-fpm php-pear php7.4-fpm php-cli php-xmlrpc php7.4-common php7.4-mysql php7.4-xmlrpc php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php7.4-imagick php-ssh2 graphicsmagick gcc libgraphicsmagick1-dev php-pear software-properties-common ca-certificates lsb-release apt-transport-https curl
 
-
 sudo apt install -y php8.2 libapache2-mod-php8.2 php8.2-mysql php8.2-common php8.2-curl php8.2-xml php8.2-mbstring php8.2-gettext php8.2-pdo php8.2-gd php8.2-zip php8.2-soap php8.2-xmlrpc php8.2-intl php8.2-mysqlnd php8.2-cli php8.2-dev php8.2-zip libapache2-mod-php8.2 php8.2-curl php8.2-bz2 php-pear
-
 
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip
 ```
 # Instalar MySQL
-
-https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
+```sh
+sudo apt upgrade
+wget http://repo.mysql.com/mysql-apt-config_0.8.13-1_all.deb -O mysql-apt-config.deb
+sudo dpkg -i mysql-apt-config.deb
+sudo dpkg-reconfigure mysql-apt-config
+sudo apt update
+sudo apt install mysql-server
+```
 
 ## mysql_secure_installation
 
@@ -92,6 +99,7 @@ a2enconf z-ocsinventory-server.conf
 
 a2enconf zz-ocsinventory-restapi.conf
 ```
+
 ## Ajustes no OCS
 ```sh
 vim vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
@@ -100,8 +108,6 @@ vim vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
 OCS_DB_LOCAL ==> database_name	line +/- 9
 OCS_DB_USER ==>  database_user	line +/- 10
 OCS_DB_PWD ==>   database_pwd   line +/- 11
-
-
 
 vim /etc/apache2/conf-enabled/z-ocsinventory-server.conf
 
