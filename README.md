@@ -150,6 +150,10 @@ sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/cli/php.i
 sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/cli/php.ini;
 ```
 
+```sh
+systemctl restart apache2;
+```
+
 ### Baixar e instalar OCS
 ```sh
 wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.11.1/OCSNG_UNIX_SERVER-2.11.1.tar.gz
@@ -190,7 +194,7 @@ OCS_DB_PWD ==>   database_pwd   line +/- 31
 
 ### Ajustando dono da pasta reports
 ```sh
-chown -R www-data:www-data /var/lib/ocsinventory-reports/
-
-systemctl restart apache2
+chown -R www-data:www-data /var/lib/ocsinventory-reports/;
+systemctl restart apache2;
+systemctl enable apache2;
 ```
