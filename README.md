@@ -139,15 +139,15 @@ sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.
 
 ### PHP 8.3
 ```sh
-# /etc/php/8.2/apache2/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/apache2/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/apache2/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/apache2/php.ini;
+# /etc/php/8.3/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.3/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/apache2/php.ini;
 
-# /etc/php/8.2/cli/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/cli/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/cli/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/cli/php.ini;
+# /etc/php/8.3/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.3/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/cli/php.ini;
 ```
 
 ### Baixar e instalar OCS
