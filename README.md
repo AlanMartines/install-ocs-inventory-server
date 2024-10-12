@@ -14,9 +14,8 @@ https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
 
 ### Ubuntu
 ```sh
-apt install -y sudo;
+sudo apt update;
 sudo apt -y install software-properties-common;
-apt install -y sudo vim;
 sudo apt update && sudo apt -y full-upgrade;
 sudo add-apt-repository ppa:ondrej/php;
 curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x;
@@ -105,15 +104,50 @@ QUIT;
 
 
 ### Ajustes no php.ini
-```sh
-# Para PHP 7.4
-vim /etc/php/7.4/apache2/php.ini 
-vim /etc/php/7.4/cli/php.ini
-
+```
 # Parâmetros a serem alterados
 short_open_tag ==> On    linea +/- 187
 post_max_size ==> 1024M  linea +/- 694
 upload_max_filesize ==> 256M linea +/- 846
+```
+
+### PHP 7.4
+```sh
+# /etc/php/7.4/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/7.4/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/7.4/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/7.4/apache2/php.ini;
+
+# /etc/php/7.4/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/7.4/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/7.4/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/7.4/cli/php.ini;
+```
+
+### PHP 8.2
+```sh
+# /etc/php/8.2/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/apache2/php.ini;
+
+# /etc/php/8.2/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/cli/php.ini;
+```
+
+### PHP 8.3
+```sh
+# /etc/php/8.2/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/apache2/php.ini;
+
+# /etc/php/8.2/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/cli/php.ini;
 ```
 
 ### Baixar e instalar OCS
