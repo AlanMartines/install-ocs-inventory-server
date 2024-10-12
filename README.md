@@ -14,46 +14,62 @@ https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
 
 ### Ubuntu
 ```sh
-apt install sudo -y
-sudo apt -y install software-properties-common
-apt install sudo vim -y
-sudo apt update && sudo apt -y full-upgrade
-sudo add-apt-repository ppa:ondrej/php
-curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x
-sudo apt update 
+apt install -y sudo;
+sudo apt -y install software-properties-common;
+apt install -y sudo vim;
+sudo apt update && sudo apt -y full-upgrade;
+sudo add-apt-repository ppa:ondrej/php;
+curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x;
+sudo apt update;
 ```
 
 ### Debian
 ```sh
-sudo apt update
-sudo apt -y install lsb-release apt-transport-https ca-certificates 
-sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
-sudo apt update
+sudo apt update;
+sudo apt -y install lsb-release apt-transport-https ca-certificates;
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg;
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list;
+sudo apt update;
 ```
 
 ```sh
-sudo apt -y install vim git make cmake gcc build-essential apache2 libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl libapache2-mod-php php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4 php7.4-pgsql php7.4-cli php7.4-common libapache2-mod-php7.4 php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 php7.4-intl php-bcmath php-fpm php-pear php7.4-fpm php-cli php-xmlrpc php7.4-common php7.4-mysql php7.4-xmlrpc php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php7.4-imagick php-ssh2 graphicsmagick gcc libgraphicsmagick1-dev php-pear software-properties-common ca-certificates lsb-release apt-transport-https curl
-
-sudo apt install -y php8.2 libapache2-mod-php8.2 php8.2-mysql php8.2-common php8.2-curl php8.2-xml php8.2-mbstring php8.2-gettext php8.2-pdo php8.2-gd php8.2-zip php8.2-soap php8.2-xmlrpc php8.2-intl php8.2-mysqlnd php8.2-cli php8.2-dev php8.2-zip libapache2-mod-php8.2 php8.2-curl php8.2-bz2 php-pear
-
-sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip
+sudo apt -y install vim git make cmake gcc build-essential graphicsmagick libgraphicsmagick1-dev php-pear software-properties-common ca-certificates lsb-release apt-transport-https curl libapache2-mod-perl2 libapache-dbi-perl libapache-db-perl bzip2 curl mycli wget ntp libarchive-tools;
 ```
-# Instalar MySQL
+
+### Instalar PHP 7.4
 ```sh
-sudo apt upgrade
-wget http://repo.mysql.com/mysql-apt-config_0.8.13-1_all.deb -O mysql-apt-config.deb
-sudo dpkg -i mysql-apt-config.deb
-sudo dpkg-reconfigure mysql-apt-config
-sudo apt update
-sudo apt install mysql-server
+sudo apt -y install php7.4 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 php7.4-intl php-fpm php7.4-fpm php-cli php-xmlrpc php7.4-common php7.4-mysql php-imagick php7.4-dev php7.4-imap php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php-ssh2 php7.4-oauth php7.4-mcrypt libapache2-mod-php7.4 php7.4-apcu php7.4-ldap php7.4-snmp
 ```
 
-## mysql_secure_installation
+### Instalar PHP 8.2
+```sh
+sudo apt -y install php8.2 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php8.2-curl php8.2-gd php8.2-mbstring php8.2-xml php8.2-bcmath php8.2-bz2 php8.2-intl php-fpm php8.2-fpm php-cli php-xmlrpc php8.2-common php8.2-mysql php-imagick php8.2-dev php8.2-imap php8.2-opcache php8.2-soap php8.2-zip php8.2-intl php-ssh2 php8.2-oauth php8.2-mcrypt libapache2-mod-php8.2 php8.2-apcu php8.2-ldap php8.2-snmp;
+```
+
+### Instalar PHP 8.3
+```sh
+sudo apt -y install php8.3 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl libplack-perl libswitch-perl php8.3-curl php8.3-gd php8.3-mbstring php8.3-xml php8.3-bcmath php8.3-bz2 php8.3-intl php-fpm php8.3-fpm php-cli php-xmlrpc php8.3-common php8.3-mysql php-imagick php8.3-dev php8.3-imap php8.3-opcache php8.3-soap php8.3-zip php8.3-intl php-ssh2 php8.3-oauth php8.3-mcrypt libapache2-mod-php8.3 php8.3-apcu php8.3-ldap php8.3-snmp;
+```
+
+```sh
+sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip;
+```
+
+### Instalar MySQL
+```sh
+sudo apt upgrade;
+wget http://repo.mysql.com/mysql-apt-config_0.8.13-1_all.deb -O mysql-apt-config.deb;
+sudo dpkg -i mysql-apt-config.deb;
+sudo dpkg-reconfigure mysql-apt-config;
+sudo apt update;
+sudo apt install mysql-server;
+```
+
+### mysql_secure_installation
 
 ![image](https://user-images.githubusercontent.com/10979090/208107935-70eadcf0-aa37-47ad-87a7-d43bee8a39d1.png)
 
-## Criando o banco de dados ocs no MySQL
+### Criando o banco de dados ocs no MySQL
 ```sh
 mysql -u root -p
 
@@ -68,7 +84,7 @@ QUIT;
 ![image](https://user-images.githubusercontent.com/10979090/208531417-a62e7a78-8426-4b8d-bda1-4fddd92034d7.png)
 
 
-## Ajustes no php.ini
+### Ajustes no php.ini
 ```sh
 # Para PHP 7.4
 vim /etc/php/7.4/apache2/php.ini 
@@ -80,7 +96,7 @@ post_max_size ==> 1024M  linea +/- 694
 upload_max_filesize ==> 256M linea +/- 846
 ```
 
-## Baixar e instalar OCS
+### Baixar e instalar OCS
 ```sh
 wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.11.1/OCSNG_UNIX_SERVER-2.11.1.tar.gz
 
@@ -91,7 +107,7 @@ cd OCSNG_UNIX_SERVER-2.11.1
 sudo ./setup.sh
 ```
 
-## Criando Links Simbólicos para o Apache
+### Criando Links Simbólicos para o Apache
 ```sh
 a2enconf ocsinventory-reports.conf
 
@@ -100,7 +116,7 @@ a2enconf z-ocsinventory-server.conf
 a2enconf zz-ocsinventory-restapi.conf
 ```
 
-## Ajustes no OCS
+### Ajustes no OCS
 ```sh
 vim vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
 
@@ -118,7 +134,7 @@ OCS_DB_USER ==>  database_user	line +/- 29
 OCS_DB_PWD ==>   database_pwd   line +/- 31
 ```
 
-## Ajustando dono da pasta reports
+### Ajustando dono da pasta reports
 ```sh
 chown -R www-data:www-data /var/lib/ocsinventory-reports/
 
