@@ -76,9 +76,10 @@ sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Sw
 
 ### Instalar MySQL
 ```sh
-sudo apt upgrade;
-wget http://repo.mysql.com/mysql-apt-config_0.8.13-1_all.deb -O mysql-apt-config.deb;
-sudo dpkg -i mysql-apt-config.deb;
+sudo apt update;
+sudo apt upgrade -y;
+wget https://repo.mysql.com//mysql-apt-config_0.8.29-1_all.deb;
+sudo apt install ./mysql-apt-config_0.8.29-1_all.deb -y;
 sudo dpkg-reconfigure mysql-apt-config;
 sudo apt update;
 sudo apt install mysql-server;
