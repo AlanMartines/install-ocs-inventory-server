@@ -12,6 +12,12 @@ https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
 
 ## Instalando Dependencias Necessárias
 
+```sh
+sudo apt -y install vim git make cmake gcc build-essential graphicsmagick libgraphicsmagick1-dev \
+software-properties-common ca-certificates lsb-release apt-transport-https curl libapache2-mod-perl2 \
+libapache-dbi-perl libapache-db-perl bzip2 curl mycli wget ntp libarchive-tools;
+```
+
 ### Ubuntu
 ```sh
 sudo apt update;
@@ -29,12 +35,6 @@ sudo apt -y install lsb-release apt-transport-https ca-certificates;
 sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg;
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list;
 sudo apt update;
-```
-
-```sh
-sudo apt -y install vim git make cmake gcc build-essential graphicsmagick libgraphicsmagick1-dev \
-software-properties-common ca-certificates lsb-release apt-transport-https curl libapache2-mod-perl2 \
-libapache-dbi-perl libapache-db-perl bzip2 curl mycli wget ntp libarchive-tools;
 ```
 
 ### Instalar PHP 7.4
