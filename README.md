@@ -39,7 +39,7 @@ sudo apt update;
 
 ### Instalar PHP 7.4
 ```sh
-sudo apt -y install apache2 php7.4 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
+sudo apt -y install apache2 libapache2-mod-fcgid php7.4 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
 php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
 libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
 libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 \
@@ -50,7 +50,7 @@ php7.4-apcu php7.4-ldap php7.4-snmp;
 
 ### Instalar PHP 8.2
 ```sh
-sudo apt -y install apache2 php8.2 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
+sudo apt -y install apache2 libapache2-mod-fcgid php8.2 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
 php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
 libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
 libplack-perl libswitch-perl php8.2-curl php8.2-gd php8.2-mbstring php8.2-xml php8.2-bcmath php8.2-bz2 \
@@ -61,7 +61,7 @@ php8.2-apcu php8.2-ldap php8.2-snmp;
 
 ### Instalar PHP 8.3
 ```sh
-sudo apt -y install apache2 php8.3 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
+sudo apt -y install apache2 libapache2-mod-fcgid php8.3 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
 php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
 libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
 libplack-perl libswitch-perl php8.3-curl php8.3-gd php8.3-mbstring php8.3-xml php8.3-bcmath php8.3-bz2 \
@@ -71,6 +71,8 @@ php8.3-apcu php8.3-ldap php8.3-snmp;
 ```
 
 ```sh
+sudo a2enmod proxy_fcgi setenvif;
+sudo systemctl restart apache2;
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip;
 ```
 
