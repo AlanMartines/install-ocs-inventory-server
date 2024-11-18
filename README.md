@@ -188,6 +188,9 @@ sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 30/' /etc/php/8.3/fpm/php.in
 
 ```sh
 systemctl restart apache2;
+systemctl restart php7.4-fpm;
+systemctl restart php8.2-fpm;
+systemctl restart php8.3-fpm;
 ```
 
 ### Baixar e instalar OCS
