@@ -129,6 +129,13 @@ sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/7.4/cli/php.i
 sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/7.4/cli/php.ini;
 sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/7.4/cli/php.ini;
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/7.4/cli/php.ini;
+
+# /etc/php/7.4/fpm/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/7.4/fpm/php.ini;
 ```
 
 ### PHP 8.2
@@ -146,6 +153,13 @@ sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/cli/php.i
 sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/cli/php.ini;
 sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 30/' /etc/php/8.2/cli/php.ini;
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 30/' /etc/php/8.2/cli/php.ini;
+
+# /etc/php/8.2/fpm/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 30/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 30/' /etc/php/8.2/fpm/php.ini;
 ```
 
 ### PHP 8.3
@@ -163,6 +177,13 @@ sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/cli/php.i
 sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/cli/php.ini;
 sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 30/' /etc/php/8.3/cli/php.ini;
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 30/' /etc/php/8.3/cli/php.ini;
+
+# /etc/php/8.3/fpm/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 30/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 30/' /etc/php/8.3/fpm/php.ini;
 ```
 
 ```sh
