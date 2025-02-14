@@ -71,6 +71,7 @@ php8.3-apcu php8.3-ldap php8.3-snmp;
 ```
 
 ```sh
+sudo a2enmod rewrite;
 sudo a2enmod proxy_fcgi setenvif;
 sudo systemctl restart apache2;
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip;
