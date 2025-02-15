@@ -159,11 +159,11 @@ systemctl restart php8.3-fpm;
 
 ### Baixar e instalar OCS
 ```sh
-wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.11.1/OCSNG_UNIX_SERVER-2.11.1.tar.gz
+wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.12.3/OCSNG_UNIX_SERVER-2.12.3.tar.gz
 
-tar xvf OCSNG_UNIX_SERVER-2.11.1.tar.gz
+tar xvf OCSNG_UNIX_SERVER-2.12.3.tar.gz
 
-cd OCSNG_UNIX_SERVER-2.11.1
+cd OCSNG_UNIX_SERVER-2.12.3
 
 sudo ./setup.sh
 ```
