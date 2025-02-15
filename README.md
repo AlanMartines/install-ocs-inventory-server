@@ -48,17 +48,6 @@ php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php-ssh2 php7.4-oauth php7.4-m
 php7.4-apcu php7.4-ldap php7.4-snmp;
 ```
 
-### Instalar PHP 8.2
-```sh
-sudo apt -y install apache2 libapache2-mod-fcgid php8.2 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
-php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
-libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
-libplack-perl libswitch-perl php8.2-curl php8.2-gd php8.2-mbstring php8.2-xml php8.2-bcmath php8.2-bz2 \
-php8.2-intl php-fpm php8.2-fpm php-cli php-xmlrpc php8.2-common php8.2-mysql php-imagick php8.2-dev php8.2-imap \
-php8.2-opcache php8.2-soap php8.2-zip php8.2-intl php-ssh2 php8.2-oauth php8.2-mcrypt libapache2-mod-php8.2 \
-php8.2-apcu php8.2-ldap php8.2-snmp;
-```
-
 ### Instalar PHP 8.3
 ```sh
 sudo apt -y install apache2 libapache2-mod-fcgid php8.3 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
@@ -71,8 +60,7 @@ php8.3-apcu php8.3-ldap php8.3-snmp;
 ```
 
 ```sh
-sudo a2enmod rewrite;
-sudo a2enmod proxy_fcgi setenvif;
+sudo a2enmod proxy_fcgi setenvif rewrite;
 sudo systemctl restart apache2;
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip;
 ```
@@ -139,30 +127,6 @@ sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/7.4/f
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/7.4/fpm/php.ini;
 ```
 
-### PHP 8.2
-```sh
-# /etc/php/8.2/apache2/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/apache2/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/apache2/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/apache2/php.ini;
-sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.2/apache2/php.ini;
-sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.2/apache2/php.ini;
-
-# /etc/php/8.2/cli/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/cli/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/cli/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/cli/php.ini;
-sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.2/cli/php.ini;
-sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.2/cli/php.ini;
-
-# /etc/php/8.2/fpm/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/fpm/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/fpm/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/fpm/php.ini;
-sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.2/fpm/php.ini;
-sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.2/fpm/php.ini;
-```
-
 ### PHP 8.3
 ```sh
 # /etc/php/8.3/apache2/php.ini
@@ -190,7 +154,6 @@ sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.3/fpm/php.i
 ```sh
 systemctl restart apache2;
 systemctl restart php7.4-fpm;
-systemctl restart php8.2-fpm;
 systemctl restart php8.3-fpm;
 ```
 
