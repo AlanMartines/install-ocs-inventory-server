@@ -48,15 +48,15 @@ php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php-ssh2 php7.4-oauth php7.4-m
 php7.4-apcu php7.4-ldap php7.4-snmp php7.4-pgsql;
 ```
 
-### Instalar PHP 8.3
+### Instalar PHP 8.4
 ```sh
-sudo apt -y install apache2 libapache2-mod-fcgid php8.3 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
+sudo apt -y install apache2 libapache2-mod-fcgid php8.4 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
 php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
 libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
-libplack-perl libswitch-perl php8.3-curl php8.3-gd php8.3-mbstring php8.3-xml php8.3-bcmath php8.3-bz2 \
-php8.3-intl php-fpm php8.3-fpm php-cli php-xmlrpc php8.3-common php8.3-mysql php-imagick php8.3-dev php8.3-imap \
-php8.3-opcache php8.3-soap php8.3-zip php8.3-intl php-ssh2 php8.3-oauth php8.3-mcrypt libapache2-mod-php8.3 \
-php8.3-apcu php8.3-ldap php8.3-snmp php8.3-pgsql;
+libplack-perl libswitch-perl php8.4-curl php8.4-gd php8.4-mbstring php8.4-xml php8.4-bcmath php8.4-bz2 \
+php8.4-intl php-fpm php8.4-fpm php-cli php-xmlrpc php8.4-common php8.4-mysql php-imagick php8.4-dev php8.4-imap \
+php8.4-opcache php8.4-soap php8.4-zip php8.4-intl php-ssh2 php8.4-oauth php8.4-mcrypt libapache2-mod-php8.4 \
+php8.4-apcu php8.4-ldap php8.4-snmp php8.4-pgsql;
 ```
 
 ```sh
@@ -131,34 +131,34 @@ sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/7.4/f
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/7.4/fpm/php.ini;
 ```
 
-### PHP 8.3
+### PHP 8.4
 ```sh
-# /etc/php/8.3/apache2/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.3/apache2/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/apache2/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/apache2/php.ini;
-sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.3/apache2/php.ini;
-sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.3/apache2/php.ini;
+# /etc/php/8.4/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.4/apache2/php.ini;
 
-# /etc/php/8.3/cli/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.3/cli/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/cli/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/cli/php.ini;
-sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.3/cli/php.ini;
-sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.3/cli/php.ini;
+# /etc/php/8.4/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.4/cli/php.ini;
 
-# /etc/php/8.3/fpm/php.ini
-sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.3/fpm/php.ini;
-sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.3/fpm/php.ini;
-sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.3/fpm/php.ini;
-sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.3/fpm/php.ini;
-sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.3/fpm/php.ini;
+# /etc/php/8.4/fpm/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.4/fpm/php.ini;
 ```
 
 ```sh
 systemctl restart apache2;
 systemctl restart php7.4-fpm;
-systemctl restart php8.3-fpm;
+systemctl restart php8.4-fpm;
 ```
 
 ### Baixar e instalar OCS
