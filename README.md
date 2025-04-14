@@ -206,13 +206,39 @@ systemctl restart php8.3-fpm;
 systemctl restart php8.4-fpm;
 ```
 
-### Mudar a verção no PHP
+### Alterar a verção no PHP
+#### Alternar para o PHP 7.4:
 ```sh
-sudo update-alternatives --config php;
-sudo update-alternatives --config phar;
-sudo update-alternatives --config phar.phar;
-sudo service apache2 restart;
+sudo a2dismod php8.3;
+sudo a2dismod php8.4;
+sudo a2enmod php7.4;
+sudo update-alternatives --set php /usr/bin/php7.4;
+sudo update-alternatives --set phar /usr/bin/phar7.4;
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar4.4;
 ```
+#### Alternar para o PHP 8.3:
+```sh
+sudo a2dismod php7.4;
+sudo a2dismod php8.4;
+sudo a2enmod php8.3;
+sudo update-alternatives --set php /usr/bin/php8.3;
+sudo update-alternatives --set phar /usr/bin/phar8.3;
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.3;
+```
+#### Alternar para o PHP 8.4:
+```sh
+sudo a2dismod php7.4;
+sudo a2dismod php8.3;
+sudo a2enmod php8.4;
+sudo update-alternatives --set php /usr/bin/php8.4;
+sudo update-alternatives --set phar /usr/bin/phar8.4;
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.4;
+```
+```sh
+sudo service apache2 restart;
+php -v;
+```
+
 
 ### Baixar e instalar OCS
 ```sh
