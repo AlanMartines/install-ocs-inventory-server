@@ -206,6 +206,14 @@ systemctl restart php8.3-fpm;
 systemctl restart php8.4-fpm;
 ```
 
+### Switch php versions
+```sh
+sudo update-alternatives --config php;
+sudo update-alternatives --config phar;
+sudo update-alternatives --config phar.phar;
+sudo service apache2 restart;
+```
+
 ### Baixar e instalar OCS
 ```sh
 wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.12.3/OCSNG_UNIX_SERVER-2.12.3.tar.gz
