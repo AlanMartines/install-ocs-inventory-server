@@ -202,6 +202,7 @@ sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/
 ```sh
 systemctl restart apache2;
 systemctl restart php7.4-fpm;
+systemctl restart php8.3-fpm;
 systemctl restart php8.4-fpm;
 ```
 
