@@ -206,7 +206,7 @@ systemctl restart php8.3-fpm;
 systemctl restart php8.4-fpm;
 ```
 
-### Switch php versions
+### Mudar a verção no PHP
 ```sh
 sudo update-alternatives --config php;
 sudo update-alternatives --config phar;
