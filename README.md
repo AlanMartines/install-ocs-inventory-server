@@ -98,13 +98,9 @@ mysql_secure_installation
 ### Criando o banco de dados ocs no MySQL
 ```sh
 mysql -u root -p
-
 CREATE DATABASE ocsdb;
-
 GRANT ALL PRIVILEGES ON ocsdb.* TO 'ocsuser'@'localhost' IDENTIFIED BY 'ocspassword';
-
 FLUSH PRIVILEGES;
-
 QUIT;
 ```
 ![image](https://user-images.githubusercontent.com/10979090/208531417-a62e7a78-8426-4b8d-bda1-4fddd92034d7.png)
@@ -143,6 +139,30 @@ sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/7.
 sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/7.4/fpm/php.ini;
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/7.4/fpm/php.ini;
 sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/7.4/fpm/php.ini;
+
+# /etc/php/7.4/apache2/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/7.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/7.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/7.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/7.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/7.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/7.4/apache2/php.ini;
+
+# /etc/php/7.4/cli/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/7.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/7.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/7.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/7.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/7.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/7.4/cli/php.ini;
+
+# /etc/php/7.4/fpm/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/7.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/7.4/fpm/php.ini;
 ```
 
 ### PHP 8.3
@@ -170,6 +190,30 @@ sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.
 sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.3/fpm/php.ini;
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.3/fpm/php.ini;
 sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.3/fpm/php.ini;
+
+# /etc/php/8.3/apache2/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.3/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.3/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.3/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.3/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.3/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.3/apache2/php.ini;
+
+# /etc/php/8.3/cli/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.3/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.3/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.3/cli/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.3/cli/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.3/cli/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.3/cli/php.ini;
+
+# /etc/php/8.3/fpm/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.3/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.3/fpm/php.ini;
 ```
 
 ### PHP 8.4
@@ -197,6 +241,30 @@ sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.
 sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.4/fpm/php.ini;
 sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.4/fpm/php.ini;
 sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.4/fpm/php.ini;
+
+# /etc/php/8.4/apache2/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.4/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.4/apache2/php.ini;
+
+# /etc/php/8.4/cli/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.4/cli/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.4/cli/php.ini;
+
+# /etc/php/8.4/fpm/php.ini
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.4/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.4/fpm/php.ini;
 ```
 
 ```sh
