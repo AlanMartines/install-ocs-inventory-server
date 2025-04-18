@@ -45,7 +45,7 @@ libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-pe
 libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-bz2 \
 php7.4-intl php-fpm php7.4-fpm php-cli php-xmlrpc php7.4-common php7.4-mysql php-imagick php7.4-dev php7.4-imap \
 php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php-ssh2 php7.4-oauth php7.4-mcrypt libapache2-mod-php7.4 \
-php7.4-apcu php7.4-ldap php7.4-snmp php7.4-pgsql;
+php7.4-apcu php7.4-ldap php7.4-snmp php7.4-pgsql php8.4-sockets;
 ```
 
 ### Instalar PHP 8.3
@@ -56,7 +56,7 @@ libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-pe
 libplack-perl libswitch-perl php8.3-curl php8.3-gd php8.3-mbstring php8.3-xml php8.3-bcmath php8.3-bz2 \
 php8.3-intl php-fpm php8.3-fpm php-cli php-xmlrpc php8.3-common php8.3-mysql php-imagick php8.3-dev php8.3-imap \
 php8.3-opcache php8.3-soap php8.3-zip php8.3-intl php-ssh2 php8.3-oauth php8.3-mcrypt libapache2-mod-php8.3 \
-php8.3-apcu php8.3-ldap php8.3-snmp php8.3-pgsql;
+php8.3-apcu php8.3-ldap php8.3-snmp php8.3-pgsql php8.3-sockets;
 ```
 
 ### Instalar PHP 8.4
@@ -67,7 +67,7 @@ libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-pe
 libplack-perl libswitch-perl php8.4-curl php8.4-gd php8.4-mbstring php8.4-xml php8.4-bcmath php8.4-bz2 \
 php8.4-intl php-fpm php8.4-fpm php-cli php-xmlrpc php8.4-common php8.4-mysql php-imagick php8.4-dev php8.4-imap \
 php8.4-opcache php8.4-soap php8.4-zip php8.4-intl php-ssh2 php8.4-oauth php8.4-mcrypt libapache2-mod-php8.4 \
-php8.4-apcu php8.4-ldap php8.4-snmp php8.4-pgsql;
+php8.4-apcu php8.4-ldap php8.4-snmp php8.4-pgsql php8.4-sockets;
 ```
 
 ```sh
