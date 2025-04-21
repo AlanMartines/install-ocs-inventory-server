@@ -163,6 +163,25 @@ sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/7.4/fpm/php
 sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/7.4/fpm/php.ini;
 sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/7.4/fpm/php.ini;
 sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/7.4/fpm/php.ini;
+
+# /etc/php/7.4/apache2/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/7.4/apache2/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/7.4/apache2/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_7.4_apache2.log|' /etc/php/7.4/apache2/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/7.4/apache2/php.ini
+
+# /etc/php/7.4/cli/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/7.4/cli/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/7.4/cli/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_7.4_cli.log|' /etc/php/7.4/cli/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/7.4/cli/php.ini
+
+# /etc/php/7.4/fpm/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/7.4/fpm/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/7.4/fpm/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_7.4_fpm.log|' /etc/php/7.4/fpm/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/7.4/fpm/php.ini
+
 ```
 
 ### PHP 8.3
@@ -214,6 +233,25 @@ sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.3/fpm/php
 sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.3/fpm/php.ini;
 sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.3/fpm/php.ini;
 sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.3/fpm/php.ini;
+
+# /etc/php/8.3/apache2/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.3/apache2/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.3/apache2/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.3_apache2.log|' /etc/php/8.3/apache2/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.3/apache2/php.ini
+
+# /etc/php/8.3/cli/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.3/cli/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.3/cli/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.3_cli.log|' /etc/php/8.3/cli/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.3/cli/php.ini
+
+# /etc/php/8.3/fpm/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.3/fpm/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.3/fpm/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.3_fpm.log|' /etc/php/8.3/fpm/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.3/fpm/php.ini
+
 ```
 
 ### PHP 8.4
@@ -265,6 +303,25 @@ sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.4/fpm/php
 sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.4/fpm/php.ini;
 sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.4/fpm/php.ini;
 sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.4/fpm/php.ini;
+
+# /etc/php/8.4/apache2/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.4/apache2/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.4/apache2/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.4_apache2.log|' /etc/php/8.4/apache2/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.4/apache2/php.ini
+
+# /etc/php/8.4/cli/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.4/cli/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.4/cli/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.4_cli.log|' /etc/php/8.4/cli/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.4/cli/php.ini
+
+# /etc/php/8.4/fpm/php.ini
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.4/fpm/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.4/fpm/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.4_fpm.log|' /etc/php/8.4/fpm/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.4/fpm/php.ini
+
 ```
 
 ```sh
