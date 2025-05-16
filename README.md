@@ -56,7 +56,7 @@ sudo apt update;
 
 ### 📌 Recomendações:
 
-* ⚠️ **PHP 8.3** – **Não lançado oficialmente**, mais recente, com melhorias de performance e segurança.
+* ⚠️ **PHP 8.4** – **Não lançado oficialmente**, mais recente, com melhorias de performance e segurança.
 * ✅ **PHP 8.3** – Mais recente, com melhorias de performance e segurança.
 * ✅ **PHP 8.2** – Ótima estabilidade e suporte de pacotes.
 * ⚠️ **PHP 8.1** – Ainda estável, mas já entra em manutenção (fim: nov/2024).
