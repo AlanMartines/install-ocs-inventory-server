@@ -48,15 +48,17 @@ sudo apt update;
 | **8.1** | 25 de nov. de 2021 | **Manutenção até nov/2024** | Muitas libs modernas exigem                     |
 | **8.2** | 8 de dez. de 2022  | **Ativa**                   | Recomendada em muitos projetos                  |
 | **8.3** | 23 de nov. de 2023 | **Mais recente estável**    | Versão mais atual, compatível com libs modernas |
+| **8.4** |       -----        | **Não lançado oficialmente**| Versão mais atual, compatível com libs modernas |
 
 ---
 
 ### 📌 Recomendações:
 
-* ✅ **PHP 8.3** – mais recente, com melhorias de performance e segurança.
-* ✅ **PHP 8.2** – ótima estabilidade e suporte de pacotes.
-* ⚠️ **PHP 8.1** – ainda estável, mas já entra em manutenção (fim: nov/2024).
-* ❌ **PHP 8.0 e 7.4** – **não recomendadas**, pois estão fora do suporte oficial.
+* ⚠️ **PHP 8.3** – **Não lançado oficialmente**, mais recente, com melhorias de performance e segurança.
+* ✅ **PHP 8.3** – Mais recente, com melhorias de performance e segurança.
+* ✅ **PHP 8.2** – Ótima estabilidade e suporte de pacotes.
+* ⚠️ **PHP 8.1** – Ainda estável, mas já entra em manutenção (fim: nov/2024).
+* ❌ **PHP 8.0 e 7.4** – **Não recomendadas**, pois estão fora do suporte oficial.
 
 ---
 
@@ -69,6 +71,39 @@ libplack-perl libswitch-perl php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml ph
 php7.4-intl php-fpm php7.4-fpm php-cli php-xmlrpc php7.4-common php7.4-mysql php-imagick php7.4-dev php7.4-imap \
 php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php-ssh2 php7.4-oauth php7.4-mcrypt libapache2-mod-php7.4 \
 php7.4-apcu php7.4-ldap php7.4-snmp php7.4-pgsql php8.4-sockets;
+```
+
+### Instalar PHP 8.0
+```sh
+sudo apt -y install apache2 libapache2-mod-fcgid php8.0 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
+php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
+libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
+libplack-perl libswitch-perl php8.0-curl php8.0-gd php8.0-mbstring php8.0-xml php8.0-bcmath php8.0-bz2 \
+php8.0-intl php-fpm php8.0-fpm php-cli php-xmlrpc php8.0-common php8.0-mysql php-imagick php8.0-dev php8.0-imap \
+php8.0-opcache php8.0-soap php8.0-zip php8.0-intl php-ssh2 php8.0-oauth php8.0-mcrypt libapache2-mod-php8.0 \
+php8.0-apcu php8.0-ldap php8.0-snmp php8.0-pgsql php8.0-sockets;
+```
+
+### Instalar PHP 8.1
+```sh
+sudo apt -y install apache2 libapache2-mod-fcgid php8.1 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
+php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
+libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
+libplack-perl libswitch-perl php8.1-curl php8.1-gd php8.1-mbstring php8.1-xml php8.1-bcmath php8.1-bz2 \
+php8.1-intl php-fpm php8.1-fpm php-cli php-xmlrpc php8.1-common php8.1-mysql php-imagick php8.1-dev php8.1-imap \
+php8.1-opcache php8.1-soap php8.1-zip php8.1-intl php-ssh2 php8.1-oauth php8.1-mcrypt libapache2-mod-php8.1 \
+php8.1-apcu php8.1-ldap php8.1-snmp php8.1-pgsql php8.1-sockets;
+```
+
+### Instalar PHP 8.2
+```sh
+sudo apt -y install apache2 libapache2-mod-fcgid php8.2 libapache2-mod-php php-zip php-pclzip php-gd php-mysql php-soap php-curl php-json php-pear \
+php-xml php-mbstring perl libxml-simple-perl libcompress-zlib-perl libdbi-perl libdbd-mysql-perl libnet-ip-perl \
+libsoap-lite-perl libio-compress-perl libapache2-mod-perl2-dev libarchive-zip-perl libmojolicious-perl \
+libplack-perl libswitch-perl php8.2-curl php8.2-gd php8.2-mbstring php8.2-xml php8.2-bcmath php8.2-bz2 \
+php8.2-intl php-fpm php8.2-fpm php-cli php-xmlrpc php8.2-common php8.2-mysql php-imagick php8.2-dev php8.2-imap \
+php8.2-opcache php8.2-soap php8.2-zip php8.2-intl php-ssh2 php8.2-oauth php8.2-mcrypt libapache2-mod-php8.2 \
+php8.2-apcu php8.2-ldap php8.2-snmp php8.2-pgsql php8.2-sockets;
 ```
 
 ### Instalar PHP 8.3
@@ -198,7 +233,186 @@ sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/7.4/fpm/php.ini
 sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_7.4_fpm.log|' /etc/php/7.4/fpm/php.ini
 sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/7.4/fpm/php.ini
 sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/7.4/fpm/php.ini
+```
 
+### PHP 8.0
+```sh
+# /etc/php/8.0/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.0/apache2/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.0/apache2/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.0/apache2/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.0_apache2.log|' /etc/php/8.0/apache2/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.0/apache2/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.0/apache2/php.ini
+
+# /etc/php/8.0/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.0/cli/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.0/cli/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.0/cli/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.0_cli.log|' /etc/php/8.0/cli/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.0/cli/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.0/cli/php.ini
+
+# /etc/php/8.0/fpm/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.0/fpm/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.0/fpm/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.0/fpm/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.0_fpm.log|' /etc/php/8.0/fpm/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.0/fpm/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.0/fpm/php.ini
+```
+
+### PHP 8.1
+```sh
+# /etc/php/8.1/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.1/apache2/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.1/apache2/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.1/apache2/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.1_apache2.log|' /etc/php/8.1/apache2/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.1/apache2/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.1/apache2/php.ini
+
+# /etc/php/8.1/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.1/cli/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.1/cli/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.1/cli/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.1_cli.log|' /etc/php/8.1/cli/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.1/cli/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.1/cli/php.ini
+
+# /etc/php/8.1/fpm/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.1/fpm/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.1/fpm/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.1/fpm/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.1_fpm.log|' /etc/php/8.1/fpm/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.1/fpm/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.1/fpm/php.ini
+```
+
+### PHP 8.2
+```sh
+# /etc/php/8.2/apache2/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.2/apache2/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.2/apache2/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.2/apache2/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.2_apache2.log|' /etc/php/8.2/apache2/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.2/apache2/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.2/apache2/php.ini
+
+# /etc/php/8.2/cli/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.2/cli/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.2/cli/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.2/cli/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.2_cli.log|' /etc/php/8.2/cli/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.2/cli/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.2/cli/php.ini
+
+# /etc/php/8.2/fpm/php.ini
+sed -i 's/^\s*short_open_tag\s*=.*/short_open_tag = On/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*post_max_size\s*=.*/post_max_size = 1024M/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*upload_max_filesize\s*=.*/upload_max_filesize = 256M/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*max_execution_time\s*=.*/max_execution_time = 300/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*max_input_time\s*=.*/max_input_time = 300/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*session.cookie_httponly\s*=.*/session.cookie_httponly = on/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pgsql/extension=pgsql/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_pgsql/extension=pdo_pgsql/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=pdo_mysql/extension=pdo_mysql/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=mysqli/extension=mysqli/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=soap/extension=soap/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^\s*;\s*extension=sockets/extension=sockets/' /etc/php/8.2/fpm/php.ini;
+sed -i 's/^;\?\s*display_errors\s*=.*/display_errors = On/' /etc/php/8.2/fpm/php.ini
+sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.2/fpm/php.ini
+sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.2_fpm.log|' /etc/php/8.2/fpm/php.ini
+sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.2/fpm/php.ini
+sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.2/fpm/php.ini
 ```
 
 ### PHP 8.3
@@ -259,7 +473,6 @@ sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.3/fpm/php.ini
 sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.3_fpm.log|' /etc/php/8.3/fpm/php.ini
 sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.3/fpm/php.ini
 sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.3/fpm/php.ini
-
 ```
 
 ### PHP 8.4
@@ -320,7 +533,6 @@ sed -i 's/^;\?\s*log_errors\s*=.*/log_errors = On/' /etc/php/8.4/fpm/php.ini
 sed -i 's|^;\?\s*error_log\s*=.*|error_log = /var/log/php_errors_8.4_fpm.log|' /etc/php/8.4/fpm/php.ini
 sed -i 's/^;\?\s*error_reporting\s*=.*/error_reporting = E_ALL/' /etc/php/8.4/fpm/php.ini
 sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.4/fpm/php.ini
-
 ```
 
 ```sh
