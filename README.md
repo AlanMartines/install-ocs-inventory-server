@@ -1,13 +1,9 @@
 # Install OCS Inventory Server on Debian/Ubuntu
 
 https://nksistemas.com/instalar-ocs-inventory-en-debian-10/
-
 https://pmorenoit.blog/2022/06/05/instalacion-de-ocs-inventory-server-2-9-2-en-ubuntu-22-04/
-
 https://www.cyberciti.biz/faq/linux-apache2-change-default-port-ipbinding/
-
 https://tecadmin.net/switch-between-multiple-php-version-on-debian/
-
 https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
 
 ## Instalando Dependencias Necessárias
@@ -36,6 +32,29 @@ sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gp
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list;
 sudo apt update;
 ```
+
+---
+
+### 🔢 **Versões Estáveis do PHP desde 7.4**
+
+| Versão  | Data de Lançamento | Status                      | Requisitos mínimos                              |
+| ------- | ------------------ | --------------------------- | ----------------------------------------------- |
+| **7.4** | 28 de nov. de 2019 | **EOL** (nov/2022)          | Última com suporte ao PHP 7                     |
+| **8.0** | 26 de nov. de 2020 | **EOL** (nov/2023)          | Requer PHP >=7.4 para upgrade                   |
+| **8.1** | 25 de nov. de 2021 | **Manutenção até nov/2024** | Muitas libs modernas exigem                     |
+| **8.2** | 8 de dez. de 2022  | **Ativa**                   | Recomendada em muitos projetos                  |
+| **8.3** | 23 de nov. de 2023 | **Mais recente estável**    | Versão mais atual, compatível com libs modernas |
+
+---
+
+### 📌 Recomendações:
+
+* ✅ **PHP 8.3** – mais recente, com melhorias de performance e segurança.
+* ✅ **PHP 8.2** – ótima estabilidade e suporte de pacotes.
+* ⚠️ **PHP 8.1** – ainda estável, mas já entra em manutenção (fim: nov/2024).
+* ❌ **PHP 8.0 e 7.4** – **não recomendadas**, pois estão fora do suporte oficial.
+
+---
 
 ### Instalar PHP 7.4
 ```sh
@@ -76,6 +95,8 @@ sudo systemctl restart apache2;
 sudo cpan install XML::Entities Apache2::SOAP Net::IP Apache::DBI Mojolicious Switch Plack::Handler Archive::Zip;
 ```
 
+---
+
 ### Instalar MySQL
 ```sh
 sudo apt update;
@@ -105,6 +126,7 @@ QUIT;
 ```
 ![image](https://user-images.githubusercontent.com/10979090/208531417-a62e7a78-8426-4b8d-bda1-4fddd92034d7.png)
 
+---
 
 ### Ajustes no php.ini
 ```
@@ -300,43 +322,98 @@ sed -i 's/^\s*allow_url_fopen\s*=.*/allow_url_fopen = On/' /etc/php/8.4/fpm/php.
 ```sh
 systemctl restart apache2;
 systemctl restart php7.4-fpm;
+systemctl restart php8.0-fpm;
+systemctl restart php8.1-fpm;
+systemctl restart php8.2-fpm;
 systemctl restart php8.3-fpm;
 systemctl restart php8.4-fpm;
 ```
 
+---
+
 ### Alterar a verção no PHP
 #### Alternar para o PHP 7.4:
 ```sh
-sudo a2dismod php8.3;
-sudo a2dismod php8.4;
-sudo a2enmod php7.4;
-sudo update-alternatives --set php /usr/bin/php7.4;
-sudo update-alternatives --set phar /usr/bin/phar7.4;
-sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.4;
+sudo a2dismod php8.0
+sudo a2dismod php8.1
+sudo a2dismod php8.2
+sudo a2dismod php8.3
+sudo a2dismod php8.4
+sudo a2enmod php7.4
+sudo update-alternatives --set php /usr/bin/php7.4
+sudo update-alternatives --set phar /usr/bin/phar7.4
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.4
+sudo systemctl restart apache2
+```
+#### Alternar para o PHP 8.0:
+```sh
+sudo a2dismod php7.4
+sudo a2dismod php8.1
+sudo a2dismod php8.2
+sudo a2dismod php8.3
+sudo a2dismod php8.4
+sudo a2enmod php8.0
+sudo update-alternatives --set php /usr/bin/php8.0
+sudo update-alternatives --set phar /usr/bin/phar8.0
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.0
+sudo systemctl restart apache2
+```
+#### Alternar para o PHP 8.1:
+```sh
+sudo a2dismod php7.4
+sudo a2dismod php8.0
+sudo a2dismod php8.2
+sudo a2dismod php8.3
+sudo a2dismod php8.4
+sudo a2enmod php8.1
+sudo update-alternatives --set php /usr/bin/php8.1
+sudo update-alternatives --set phar /usr/bin/phar8.1
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.1
+sudo systemctl restart apache2
+```
+#### Alternar para o PHP 8.2:
+```sh
+sudo a2dismod php7.4
+sudo a2dismod php8.0
+sudo a2dismod php8.1
+sudo a2dismod php8.3
+sudo a2dismod php8.4
+sudo a2enmod php8.2
+sudo update-alternatives --set php /usr/bin/php8.2
+sudo update-alternatives --set phar /usr/bin/phar8.2
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.2
+sudo systemctl restart apache2
 ```
 #### Alternar para o PHP 8.3:
 ```sh
-sudo a2dismod php7.4;
-sudo a2dismod php8.4;
-sudo a2enmod php8.3;
-sudo update-alternatives --set php /usr/bin/php8.3;
-sudo update-alternatives --set phar /usr/bin/phar8.3;
-sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.3;
+sudo a2dismod php7.4
+sudo a2dismod php8.0
+sudo a2dismod php8.1
+sudo a2dismod php8.2
+sudo a2dismod php8.4
+sudo a2enmod php8.3
+sudo update-alternatives --set php /usr/bin/php8.3
+sudo update-alternatives --set phar /usr/bin/phar8.3
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.3
+sudo systemctl restart apache2
 ```
 #### Alternar para o PHP 8.4:
 ```sh
-sudo a2dismod php7.4;
-sudo a2dismod php8.3;
-sudo a2enmod php8.4;
-sudo update-alternatives --set php /usr/bin/php8.4;
-sudo update-alternatives --set phar /usr/bin/phar8.4;
-sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.4;
+sudo a2dismod php7.4
+sudo a2dismod php8.0
+sudo a2dismod php8.1
+sudo a2dismod php8.2
+sudo a2dismod php8.3
+sudo a2enmod php8.4
+sudo update-alternatives --set php /usr/bin/php8.3
+sudo update-alternatives --set phar /usr/bin/phar8.3
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.3
+sudo systemctl restart apache2
 ```
 ```sh
-sudo service apache2 restart;
 php -v;
 ```
-
+---
 
 ### Baixar e instalar OCS
 ```sh
@@ -375,6 +452,7 @@ OCS_DB_LOCAL ==> database_name	line +/- 27
 OCS_DB_USER ==>  database_user	line +/- 29
 OCS_DB_PWD ==>   database_pwd   line +/- 31
 ```
+---
 
 ### Ajustando dono da pasta reports
 ```sh
