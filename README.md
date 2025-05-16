@@ -48,7 +48,9 @@ sudo apt update;
 | **8.1** | 25 de nov. de 2021 | **Manutenção até nov/2024** | Muitas libs modernas exigem                     |
 | **8.2** | 8 de dez. de 2022  | **Ativa**                   | Recomendada em muitos projetos                  |
 | **8.3** | 23 de nov. de 2023 | **Mais recente estável**    | Versão mais atual, compatível com libs modernas |
-| **8.4** |       -----        | **Não lançado oficialmente**| Versão mais atual, compatível com libs modernas |
+| **8.4** |                    | **Não lançado oficialmente**| Versão mais atual, compatível com libs modernas |
+
+⚠️ **PHP 8.4** ainda não foi oficialmente lançado. As instruções abaixo são **provisórias** e podem não funcionar.
 
 ---
 
