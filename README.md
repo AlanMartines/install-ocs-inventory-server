@@ -1,9 +1,13 @@
 # Install OCS Inventory Server on Debian/Ubuntu
 
 https://nksistemas.com/instalar-ocs-inventory-en-debian-10/
+
 https://pmorenoit.blog/2022/06/05/instalacion-de-ocs-inventory-server-2-9-2-en-ubuntu-22-04/
+
 https://www.cyberciti.biz/faq/linux-apache2-change-default-port-ipbinding/
+
 https://tecadmin.net/switch-between-multiple-php-version-on-debian/
+
 https://www.edivaldobrito.com.br/mysql-no-debian-e-sistemas-derivados/
 
 ## Instalando Dependencias Necessárias
