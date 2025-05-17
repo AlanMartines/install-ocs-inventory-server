@@ -623,9 +623,9 @@ sudo a2dismod php8.1
 sudo a2dismod php8.2
 sudo a2dismod php8.3
 sudo a2enmod php8.4
-sudo update-alternatives --set php /usr/bin/php8.3
-sudo update-alternatives --set phar /usr/bin/phar8.3
-sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.3
+sudo update-alternatives --set php /usr/bin/php8.4
+sudo update-alternatives --set phar /usr/bin/phar8.4
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.4
 sudo systemctl restart apache2
 ```
 ```sh
