@@ -655,7 +655,7 @@ a2enconf zz-ocsinventory-restapi.conf
 
 ### Ajustes no OCS
 ```sh
-vim vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
+vim /etc/apache2/conf-enabled/zz-ocsinventory-restapi.conf
 
 # Parâmetros a serem alterados
 OCS_DB_LOCAL ==> database_name	line +/- 9
