@@ -672,6 +672,57 @@ OCS_DB_PWD ==>   database_pwd   line +/- 31
 ```
 ---
 
+# 🛠️ Passo a Passo: Correção do Erro de Chave GPG (PHP Sury)
+
+Siga estas etapas para corrigir o erro `EXPKEYSIG B188E2B695BD4743` que impede o `apt update` de finalizar com sucesso.
+
+### 1. Atualizar a Chave GPG no Sistema
+
+Primeiro, vamos baixar a chave pública atualizada do repositório oficial e salvá-la no diretório de chaveiros do sistema:
+
+```bash
+curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
+
+```
+### 2. Modificar a Linha do Repositório
+
+Você precisa editar o arquivo de configuração para que o `apt` saiba que deve usar a chave específica que acabamos de baixar.
+
+* **Abra o arquivo para edição:**
+```bash
+nano /etc/apt/sources.list.d/php.list
+
+```
+
+* **Edite a linha:** Apague o conteúdo antigo e cole a nova linha abaixo (substitua `bookworm` pela sua versão do Debian, se necessário):
+```text
+deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ bookworm main
+
+```
+
+### 3. Salvar e Sair
+
+Dentro do editor `nano`, siga estes comandos de teclado:
+
+1. Pressione `Ctrl + O` (para gravar as alterações).
+2. Pressione `Enter` (para confirmar o nome do arquivo).
+3. Pressione `Ctrl + X` (para sair do editor).
+
+### 4. Limpar o Cache e Atualizar
+
+Agora, limpe os metadados antigos do `apt` para garantir que ele leia as novas configurações:
+
+```bash
+# Limpa o cache local
+apt-get clean
+
+# Atualiza a lista de repositórios
+apt update
+
+```
+
+---
+
 ### Ajustando dono da pasta reports
 ```sh
 chown -R www-data:www-data /var/lib/ocsinventory-reports/;
