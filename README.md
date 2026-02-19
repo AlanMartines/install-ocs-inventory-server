@@ -670,6 +670,16 @@ OCS_DB_LOCAL ==> database_name	line +/- 27
 OCS_DB_USER ==>  database_user	line +/- 29
 OCS_DB_PWD ==>   database_pwd   line +/- 31
 ```
+
+---
+
+### Ajustando dono da pasta reports
+```sh
+chown -R www-data:www-data /var/lib/ocsinventory-reports/;
+systemctl restart apache2;
+systemctl enable apache2;
+```
+
 ---
 
 # 🛠️ Passo a Passo: Correção do Erro de Chave GPG (PHP Sury)
@@ -719,13 +729,4 @@ apt-get clean
 # Atualiza a lista de repositórios
 apt update
 
-```
-
----
-
-### Ajustando dono da pasta reports
-```sh
-chown -R www-data:www-data /var/lib/ocsinventory-reports/;
-systemctl restart apache2;
-systemctl enable apache2;
 ```
